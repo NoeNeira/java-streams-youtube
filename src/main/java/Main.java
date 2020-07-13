@@ -1,3 +1,4 @@
+import javax.xml.namespace.QName;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -15,7 +16,20 @@ public class Main {
     people.add(new Person("Anna Cook", 7, Gender.FEMALE));
     people.add(new Person("Silvia Smithers", 12, Gender.FEMALE));
 
-    //System.out.println(people);
+    // Remove a person from the ArrayList
+    people.remove(2);
+
+    // Check the (new) size of an ArrayList
+    System.out.println(people.size());
+
+    // Modify some attributes of a element of the Arraylist
+    people.set(3, new Person("Noelia", 22, Gender.UNDEFINED));
+
+    // Add a new element
+    people.add(new Person("Silvia Smithers", 12, Gender.FEMALE));
+
+    // Check the (newest) size of an ArrayList
+    System.out.println(people.size());
 
     // Filter - By gender
     ArrayList<Person> females = people.stream()
@@ -51,7 +65,9 @@ public class Main {
     Map<Gender, List<Person>> groupByGender = people.stream()
             .collect(Collectors.groupingBy(Person::getGender));
 
+    int x = 6;
   }
+
 }
 
 
